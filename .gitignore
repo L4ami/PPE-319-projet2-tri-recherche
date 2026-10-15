@@ -1,0 +1,82 @@
+# =====================================================================
+#  .gitignore — PPE 319, Projet 2 : tri et recherche de clients
+#  C# / .NET 10 / Visual Studio 2026
+#
+#  Ce fichier liste les fichiers et dossiers que Git doit IGNORER :
+#  ils ne seront jamais envoyés sur GitHub.
+# =====================================================================
+
+
+# ---------------------------------------------------------------------
+# 1. Résultats de compilation (.NET)
+#    Ces dossiers sont recréés automatiquement à chaque compilation.
+#    Ils sont lourds et inutiles dans le dépôt.
+# ---------------------------------------------------------------------
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+
+# ---------------------------------------------------------------------
+# 2. Visual Studio
+#    Réglages personnels de l'IDE (fenêtres ouvertes, points d'arrêt,
+#    cache...). Ils sont propres à chaque ordinateur.
+# ---------------------------------------------------------------------
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+
+# ---------------------------------------------------------------------
+# 3. Résultats de tests et fichiers journaux
+#    Générés pendant l'exécution, ils ne font pas partie du code.
+# ---------------------------------------------------------------------
+TestResults/
+*.log
+
+
+# ---------------------------------------------------------------------
+# 4. Autres éditeurs de code
+#    Réglages de VS Code et des IDE JetBrains (Rider...).
+# ---------------------------------------------------------------------
+.vscode/
+.idea/
+
+
+# ---------------------------------------------------------------------
+# 5. Fichiers créés par le système d'exploitation
+#    Windows (Thumbs.db, Desktop.ini) et macOS (.DS_Store).
+# ---------------------------------------------------------------------
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+
+# ---------------------------------------------------------------------
+# 6. Secrets (OBLIGATOIRE)
+#    Mots de passe, clés et certificats ne doivent JAMAIS être publiés.
+#    Le fichier .env.example (modèle sans vraies valeurs) reste autorisé.
+# ---------------------------------------------------------------------
+# Variables d'environnement
+.env
+.env.*
+!.env.example
+
+# Clés et certificats
+*.pem
+*.key
+*.pfx
+*.p12
+
+# Clés SSH
+id_rsa*
+id_ed25519*
+
+# Coffre-fort de mots de passe KeePass
+*.kdbx
