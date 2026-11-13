@@ -1,44 +1,47 @@
-# Tri et recherche de clients en C#
-
-Application console C# qui génère une liste de clients, la trie et y recherche un client avec mes propres algorithmes, puis compare leurs temps d'exécution avec les méthodes natives de .NET.
+# 🔎 Tri et recherche de clients en C#
 
 ![Langage C#](https://img.shields.io/badge/langage-C%23-239120)
 ![.NET 10](https://img.shields.io/badge/.NET-10-512BD4?logo=dotnet&logoColor=white)
 ![Visual Studio 2026](https://img.shields.io/badge/IDE-Visual%20Studio%202026-5C2D91)
+![Algorithmes](https://img.shields.io/badge/algorithmes-tri_%C3%A0_bulles_%C2%B7_recherche_lin%C3%A9aire-0A7BBB)
 ![Statut : terminé](https://img.shields.io/badge/statut-termin%C3%A9-brightgreen)
+
+> **En une phrase :** j'ai écrit à la main un **tri à bulles** et une **recherche linéaire** sur une liste de clients, puis j'ai mesuré leurs temps face aux méthodes natives de .NET : à 10 000 clients, `Array.Sort` est environ **275 fois plus rapide** que mon tri.
+
+Application console C# qui génère une liste de clients, la trie et y recherche un client avec mes propres algorithmes, puis compare leurs temps d'exécution avec les méthodes natives de .NET.
+👉 Le tableau des mesures est dans [Résultats](#-résultats), l'explication dans [Analyse de complexité](#-analyse-de-complexité).
 
 > [!NOTE]
 > Projet scolaire : **PPE (projet pratique encadré), Projet 2** du cours **« Algorithmique orientée C# (319) »**, 1re année, classe E1B, Geneva Institute of Technology (GIT), octobre 2026.
 
 ---
 
-## Sommaire
+## 🗂️ Sommaire
 
-- [Contexte et objectif](#contexte-et-objectif)
-- [Fonctionnalités](#fonctionnalités)
-- [Structure du dépôt](#structure-du-dépôt)
-- [Prérequis](#prérequis)
-- [Installation et exécution](#installation-et-exécution)
-- [Fonctionnement](#fonctionnement)
+- [Contexte et objectif](#-contexte-et-objectif)
+- [Fonctionnalités](#-fonctionnalités)
+- [Structure du dépôt](#-structure-du-dépôt)
+- [Prérequis](#-prérequis)
+- [Installation et exécution](#-installation-et-exécution)
+- [Fonctionnement](#-fonctionnement)
   - [Données](#données)
   - [Tri à bulles](#tri-à-bulles)
   - [Recherche linéaire](#recherche-linéaire)
   - [Mesure des performances](#mesure-des-performances)
-- [Résultats](#résultats)
-- [Analyse de complexité](#analyse-de-complexité)
-- [Tests et validation](#tests-et-validation)
-- [Captures d'écran](#captures-décran)
-- [Problèmes rencontrés et solutions](#problèmes-rencontrés-et-solutions)
-- [Ce que j'ai appris](#ce-que-jai-appris)
-- [Historique du projet](#historique-du-projet)
-- [Méthode de travail](#méthode-de-travail)
-- [Pistes d'amélioration](#pistes-damélioration)
-- [Sources](#sources)
-- [Auteur](#auteur)
+- [Résultats](#-résultats)
+- [Analyse de complexité](#-analyse-de-complexité)
+- [Tests et validation](#-tests-et-validation)
+- [Captures d'écran](#-captures-décran)
+- [Problèmes rencontrés et solutions](#-problèmes-rencontrés-et-solutions)
+- [Ce que j'ai appris](#-ce-que-jai-appris)
+- [Historique du projet](#-historique-du-projet)
+- [Méthode de travail](#-méthode-de-travail)
+- [Pistes d'amélioration](#-pistes-damélioration)
+- [Sources](#-sources)
 
 ---
 
-## Contexte et objectif
+## 🎯 Contexte et objectif
 
 ### L'énoncé
 
@@ -62,21 +65,21 @@ Une entreprise veut **trier** et **rechercher** efficacement dans une liste de p
 | Comparer avec `Array.Sort` / `List.Find` | Mesures avec `Stopwatch` — voir [Mesure des performances](#mesure-des-performances) | ✅ |
 | Documenter | Ce README | ✅ |
 | Livrable : code source | [`TriRecherche/Program.cs`](TriRecherche/Program.cs) | ✅ |
-| Livrable : tableau comparatif des performances | [Résultats](#résultats) | ✅ |
-| Livrable : note explicative sur les complexités | [Analyse de complexité](#analyse-de-complexité) | ✅ |
+| Livrable : tableau comparatif des performances | [Résultats](#-résultats) | ✅ |
+| Livrable : note explicative sur les complexités | [Analyse de complexité](#-analyse-de-complexité) | ✅ |
 
 ### Critères d'évaluation
 
 | Critère | Poids | Où le trouver dans ce dépôt |
 |---|:---:|---|
-| Réalisation technique | 30 % | [`Program.cs`](TriRecherche/Program.cs), [Fonctionnement](#fonctionnement) |
+| Réalisation technique | 30 % | [`Program.cs`](TriRecherche/Program.cs), [Fonctionnement](#-fonctionnement) |
 | Respect des consignes | 25 % | Tableau des exigences ci-dessus |
-| Tests / validation | 25 % | [Tests et validation](#tests-et-validation) |
-| Documentation | 20 % | Ce README, [Analyse de complexité](#analyse-de-complexité) |
+| Tests / validation | 25 % | [Tests et validation](#-tests-et-validation) |
+| Documentation | 20 % | Ce README, [Analyse de complexité](#-analyse-de-complexité) |
 
 ---
 
-## Fonctionnalités
+## ✨ Fonctionnalités
 
 - **Génération automatique** de clients (`Id`, `Nom`, `Prenom`, `Ville`), sans aucune saisie au clavier.
 - **Mélange aléatoire** de la liste avec l'algorithme de Fisher-Yates.
@@ -88,7 +91,7 @@ Une entreprise veut **trier** et **rechercher** efficacement dans une liste de p
 
 ---
 
-## Structure du dépôt
+## 📁 Structure du dépôt
 
 ```text
 ppe-319-projet2-tri-recherche/
@@ -109,7 +112,7 @@ Tout le code se trouve dans un seul fichier, `Program.cs` :
 
 ---
 
-## Prérequis
+## 🧰 Prérequis
 
 - [SDK .NET 10](https://dotnet.microsoft.com/download)
 - [Visual Studio 2026](https://visualstudio.microsoft.com/) (facultatif : la ligne de commande `dotnet` suffit)
@@ -117,7 +120,7 @@ Tout le code se trouve dans un seul fichier, `Program.cs` :
 
 ---
 
-## Installation et exécution
+## ▶️ Installation et exécution
 
 ### En ligne de commande
 
@@ -143,7 +146,7 @@ dotnet run -c Release --project TriRecherche
 
 ---
 
-## Fonctionnement
+## 🏗️ Fonctionnement
 
 Le programme répète les mêmes étapes pour trois tailles de liste : 100, 1 000 et 10 000 clients.
 
@@ -301,7 +304,7 @@ Pour comparer mes algorithmes aux méthodes natives de façon **équitable**, j'
 
 ---
 
-## Résultats
+## ✅ Résultats
 
 Temps mesurés en **millisecondes** (mode Debug, une exécution) :
 
@@ -322,7 +325,7 @@ Ce que je retiens :
 
 ---
 
-## Analyse de complexité
+## 📈 Analyse de complexité
 
 La notation **Big-O** (« grand O ») indique comment le temps d'un algorithme augmente quand la taille des données augmente.
 
@@ -363,7 +366,7 @@ Les rapports mesurés confirment la théorie : le tri à bulles (O(n²)) devient
 
 ---
 
-## Tests et validation
+## 🧪 Tests et validation
 
 Tous les tests sont **réussis**.
 
@@ -400,7 +403,7 @@ static bool EstTrie(List<Client> liste)
 
 ---
 
-## Captures d'écran
+## 🖼️ Captures d'écran
 
 ![Génération de 500 clients](docs/captures/01-generation-clients.png)
 
@@ -412,13 +415,13 @@ static bool EstTrie(List<Client> liste)
 
 Les autres captures se trouvent dans les sections correspondantes :
 
-- [Capture 03 : recherche trouvée](docs/captures/03-recherche-trouve.png) — voir [Tests et validation](#tests-et-validation)
-- [Capture 04 : recherche introuvable](docs/captures/04-recherche-introuvable.png) — voir [Tests et validation](#tests-et-validation)
-- [Capture 05 : mesures et tests](docs/captures/05-mesures-et-tests.png) — voir [Résultats](#résultats)
+- [Capture 03 : recherche trouvée](docs/captures/03-recherche-trouve.png) — voir [Tests et validation](#-tests-et-validation)
+- [Capture 04 : recherche introuvable](docs/captures/04-recherche-introuvable.png) — voir [Tests et validation](#-tests-et-validation)
+- [Capture 05 : mesures et tests](docs/captures/05-mesures-et-tests.png) — voir [Résultats](#-résultats)
 
 ---
 
-## Problèmes rencontrés et solutions
+## ⚠️ Problèmes rencontrés et solutions
 
 | # | Problème | Cause | Solution |
 |:---:|---|---|---|
@@ -437,7 +440,7 @@ Les autres captures se trouvent dans les sections correspondantes :
 
 ---
 
-## Ce que j'ai appris
+## 🧠 Ce que j'ai appris
 
 - **Classe, constructeur et propriétés** : décrire un client et le créer avec `new`.
 - **Variables et types** : `int`, `string`, `bool`, `Client`, et pourquoi le type doit correspondre à la valeur.
@@ -452,7 +455,7 @@ Les autres captures se trouvent dans les sections correspondantes :
 
 ---
 
-## Historique du projet
+## 🗓️ Historique du projet
 
 | Date (octobre 2026) | Étape |
 |---|---|
@@ -464,14 +467,14 @@ Les autres captures se trouvent dans les sections correspondantes :
 
 ---
 
-## Méthode de travail
+## 🤝 Méthode de travail
 
 > [!NOTE]
 > J'ai réalisé ce projet avec l'aide de **Claude** (assistant IA d'Anthropic), utilisé comme **tuteur** : il m'a expliqué les notions, a corrigé mes erreurs et m'a fourni certains morceaux de code. Ces morceaux de code, je les ai tapés moi-même, puis exécutés, testés et commentés. Les calculs de rapports (×100, ×8) et l'optimisation `- passe` du tri à bulles viennent de moi.
 
 ---
 
-## Pistes d'amélioration
+## 🚀 Pistes d'amélioration
 
 - Ajouter une **recherche dichotomique**, en O(log n), sur la liste triée.
 - Faire les mesures en mode **Release**.
@@ -481,7 +484,7 @@ Les autres captures se trouvent dans les sections correspondantes :
 
 ---
 
-## Sources
+## 📚 Sources
 
 - Microsoft Learn — [Collections en C#](https://learn.microsoft.com/fr-fr/dotnet/standard/collections/)
 - Microsoft Learn — [`Array.Sort`](https://learn.microsoft.com/fr-fr/dotnet/api/system.array.sort)
@@ -490,7 +493,5 @@ Les autres captures se trouvent dans les sections correspondantes :
 
 ---
 
-## Auteur
-
-**Lami** ([@L4ami](https://github.com/L4ami)) — 1re année, classe E1B, Geneva Institute of Technology (GIT).
-Cours « Algorithmique orientée C# (319) » — PPE, Projet 2, octobre 2026.
+**Auteur :** Paul Giocanti ([@L4ami](https://github.com/L4ami)) · Octobre 2026<br>
+CFC d'informaticien + Bachelor (double certification) · Geneva Institute of Technology
