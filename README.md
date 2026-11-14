@@ -8,7 +8,7 @@
 
 > **En une phrase :** j'ai écrit à la main un **tri à bulles** et une **recherche linéaire** sur une liste de clients, puis j'ai mesuré leurs temps face aux méthodes natives de .NET : à 10 000 clients, `Array.Sort` est environ **275 fois plus rapide** que mon tri.
 
-Application console C# qui génère une liste de clients, la trie et y recherche un client avec mes propres algorithmes, puis compare leurs temps d'exécution avec les méthodes natives de .NET.
+Application console C# qui génère une liste de clients, la trie et y recherche un client avec mes propres algorithmes, puis compare leurs temps d'exécution avec les méthodes natives de .NET.<br>
 👉 Le tableau des mesures est dans [Résultats](#-résultats), l'explication dans [Analyse de complexité](#-analyse-de-complexité).
 
 > [!NOTE]
@@ -22,8 +22,8 @@ Application console C# qui génère une liste de clients, la trie et y recherche
 - [Fonctionnalités](#-fonctionnalités)
 - [Structure du dépôt](#-structure-du-dépôt)
 - [Prérequis](#-prérequis)
-- [Installation et exécution](#-installation-et-exécution)
-- [Fonctionnement](#-fonctionnement)
+- [Installation et exécution](#%EF%B8%8F-installation-et-exécution)
+- [Fonctionnement](#%EF%B8%8F-fonctionnement)
   - [Données](#données)
   - [Tri à bulles](#tri-à-bulles)
   - [Recherche linéaire](#recherche-linéaire)
@@ -31,10 +31,10 @@ Application console C# qui génère une liste de clients, la trie et y recherche
 - [Résultats](#-résultats)
 - [Analyse de complexité](#-analyse-de-complexité)
 - [Tests et validation](#-tests-et-validation)
-- [Captures d'écran](#-captures-décran)
-- [Problèmes rencontrés et solutions](#-problèmes-rencontrés-et-solutions)
+- [Captures d'écran](#%EF%B8%8F-captures-décran)
+- [Problèmes rencontrés et solutions](#%EF%B8%8F-problèmes-rencontrés-et-solutions)
 - [Ce que j'ai appris](#-ce-que-jai-appris)
-- [Historique du projet](#-historique-du-projet)
+- [Historique du projet](#%EF%B8%8F-historique-du-projet)
 - [Méthode de travail](#-méthode-de-travail)
 - [Pistes d'amélioration](#-pistes-damélioration)
 - [Sources](#-sources)
@@ -72,7 +72,7 @@ Une entreprise veut **trier** et **rechercher** efficacement dans une liste de p
 
 | Critère | Poids | Où le trouver dans ce dépôt |
 |---|:---:|---|
-| Réalisation technique | 30 % | [`Program.cs`](TriRecherche/Program.cs), [Fonctionnement](#-fonctionnement) |
+| Réalisation technique | 30 % | [`Program.cs`](TriRecherche/Program.cs), [Fonctionnement](#%EF%B8%8F-fonctionnement) |
 | Respect des consignes | 25 % | Tableau des exigences ci-dessus |
 | Tests / validation | 25 % | [Tests et validation](#-tests-et-validation) |
 | Documentation | 20 % | Ce README, [Analyse de complexité](#-analyse-de-complexité) |
